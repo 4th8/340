@@ -102,7 +102,12 @@ int main(){
 			currentLine = delete_characters(pos, characters, currentLine);
 			cout<<currentLine<<endl;
 		}
-		else if(command == "R"){
+		else if(command[0] == 'R'){
+			int space = get_pos(" ", command);	
+			space++;
+			string posString = command.substr(space,get_length(command));
+			currentLine = replace(currentLine, posString);
+			cout<<currentLine<<endl;
 		}
 		else if(command == "N"){
 		}
