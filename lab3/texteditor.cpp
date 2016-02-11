@@ -29,7 +29,12 @@ int main(){
 }
 
 int get_length(string currentline){
-		return strlen(currentline);
+	return strlen(currentline);
+
+}
+
+int get_pos(string str, string currentline){
+	return currentline.find(str);
 
 }
 
