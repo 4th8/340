@@ -63,11 +63,11 @@ string delete_characters(int pos, int numChar, string currentline){
 
 }
 
-/*string replace(string currentline, string toBeReplaced){
+string replace(string currentline, string toBeReplaced){
 	string replacement;
 	cout << "With what? ";
 	cin >> replacement;
-	int pos = getPos(toBeReplaced, currentline);
-	int length =strlen(replacement);
-	currentline.replace(pos, lenth, replacement);
-}*/
+	int pos = get_pos(toBeReplaced, currentline);
+	int length = get_length(toBeReplaced);
+	return currentline.replace(pos, length, replacement);
+}
