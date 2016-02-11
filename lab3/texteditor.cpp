@@ -2,8 +2,43 @@
 #include <fstream>
 #include <string>
 using namespace std;
+string currentLine;
 
-int get_length(string);
+
+int get_length(string currentline){
+	return currentline.length();
+
+}
+
+int get_pos(string str, string x){
+	return x.find(str);
+
+}
+
+string insert(int pos, string str, string currentline){
+	return currentline.insert(pos, str);
+}
+
+string delete_characters(int pos, int numChar, string currentline){
+	return currentline.erase(pos, numChar);
+
+}
+
+string replace(string currentline, string toBeReplaced){
+	string replacement;
+	cout << "With what? ";
+	cin >> replacement;
+	int pos = get_pos(toBeReplaced, currentline);
+	int length = get_length(toBeReplaced);
+	return currentline.replace(pos, length, replacement);
+}
+/*
+string nextline (int currentline, string nextline){
+	
+	string nextline = getline(filename, currerntline++);
+	
+}*/
+
 
 int main(){
 	string filename;
@@ -26,86 +61,37 @@ int main(){
 	cout<<endl<<"Enter an editing command following each prompt >"<<endl;
 	cin.clear();
 	string command;
-	string currentLine;
 	input_file >> currentLine;
 	cout<<currentLine<<endl;
-	cin>> command;
+	getline(cin,command);
+	cout<<command<<endl;
+	cout<<"Begin Test:"<<endl;
+	string test = "How are.";
+	cout<<test.find(" ")<<" Should be 3."<<endl;
+	cout<<"End Test"<<endl;
 	while(command != "Q"){
-		if(command ="L"){
+		if(command == "L"){
 			int length;
 			length =  get_length(currentLine);
-			cout<<"Length is: "<<length<<endl;
 			cout<<currentLine<<endl;
 		}
-		if(command ="P"){
-			cout<<"You entered P"<<endl;
+		else if(command[0] == 'P'){
+			int space = get_pos(" ", command);	
+			space++;
+			string str = command.substr(space,get_length(command));
+			cout<<"Position is: "<<get_pos(str, currentLine)<<endl;
 		}
-		if(command ="I"){
+		else if(command == "I"){
 		
 		}
-		if(command ="D"){
+		else if(command == "D"){
 		}
-		if(command ="R"){
+		else if(command == "R"){
 		}
-		if(command ="N"){
+		else if(command == "N"){
 		}
 		cin.clear();
-		cin>> command;
+		getline(cin,command);
 	}
 	return 0;
 }
-
-
-int get_length(string currentline){
-	return currentline.length();
-
-}
-
-int get_pos(string str, string currentline){
-	return currentline.find(str);
-
-}
-
-string insert(int pos, string str, string currentline){
-	return currentline.insert(pos, str);
-}
-
-string delete_characters(int pos, int numChar, string currentline){
-	return currentline.erase(pos, numChar);
-
-}
-
-string replace(string currentline, string toBeReplaced){
-	string replacement;
-	cout << "With what? ";
-	cin >> replacement;
-	int pos = get_pos(toBeReplaced, currentline);
-	int length = get_length(toBeReplaced);
-	return currentline.replace(pos, length, replacement);
-}
-
-string nextline (int currentline, string nextline){
-	
-	string nextline = getline(filename, currerntline++);
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
