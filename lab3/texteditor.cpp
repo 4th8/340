@@ -82,8 +82,11 @@ int main(){
 			string str = command.substr(space,get_length(command));
 			cout<<"Position is: "<<get_pos(str, currentLine)<<endl;
 		}
-		else if(command == "I"){
-		
+		else if(command[0] == 'I'){
+			int space = get_pos(" ", command);
+			space++;
+			string str = command.substr(space,get_length(command));
+			cout<<insert(str, currentLine)<<endl;	
 		}
 		else if(command == "D"){
 		}
@@ -108,7 +111,10 @@ int get_pos(string str, string currentline){
 
 }
 
-string insert(int pos, string str, string currentline){
+string insert(string str, string currentline){
+	int pos;
+	cout << "Insert where? ";
+	cin >> pos;
 	return currentline.insert(pos, str);
 }
 
