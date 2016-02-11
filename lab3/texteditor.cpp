@@ -27,29 +27,29 @@ int main(){
 	string command;
 	cin >> command;
 	while(command.compare("Q"){
-			if(command.compare("L"){
-					int length;
-					length =  get_length(currentline);
-					cout<<"Length is: "<<length<<endl;
-					cout<<currentLine<<endl;
-					}
-					if(command.compare("P"){
-						}	
-						cin>> command;
-						}
-						return 0;
-						}
+		if(command.compare("L"){
+			int length;
+			length =  get_length(currentline);
+			cout<<"Length is: "<<length<<endl;
+			cout<<currentLine<<endl;
+		}
+		if(command.compare("P"){
+		}	
+		cin>> command;
+	}
+	return 0;
+	}
 
-						int get_length(string currentline){
-						return strlen(currentline);
+	int get_length(string currentline){
+		return strlen(currentline);
 
-						}
+	}
 
-						int get_pos(string str, string currentline){
-						return currentline.find(str);
+	int get_pos(string str, string currentline){
+		return currentline.find(str);
 
-						}
+	}
 
-string insert(int pos, string str, string currentline){
-	return currentline.insert(pos, str);
-}
+	string insert(int pos, string str, string currentline){
+		return currentline.insert(pos, str);
+	}
