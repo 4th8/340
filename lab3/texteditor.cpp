@@ -10,11 +10,11 @@ int main(){
 	cin.ignore();
 	cout << "Please enter a file name" << endl;
 	cin >> filename;
-	ifstream input_file ("File.txt");
+	ifstream input_file (filename.c_str());
 	cin.ignore();
 	// append .out to input file name to create output file name
 	filename.append(".out");
-	ofstream output_file ("File.txt");
+	ofstream output_file (filename.c_str());
 	cout << "The Editing commands are:"<< endl;
 	cout << "L :Determine the length of the current line"<<endl;
 	cout << "P str :Find the position (from 0) of the string str"<<endl;
@@ -68,8 +68,8 @@ string replace(string currentline, string toBeReplaced){
 	cout << "With what? ";
 	cin >> replacement;
 	int pos = get_pos(toBeReplaced, currentline);
-	int length = length(toBeReplaced);
-	return currentline.replace(pos, lenth, replacement);
+	int length = get_length(toBeReplaced);
+	return currentline.replace(pos, length, replacement);
 }
 
 
