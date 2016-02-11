@@ -67,7 +67,7 @@ string replace(string currentline, string toBeReplaced){
 	string replacement;
 	cout << "With what? ";
 	cin >> replacement;
-	int pos = getPos(toBeReplaced, currentline);
-	int length =strlen(replacement);
-	currentline.replace(pos, lenth, replacement);
+	int pos = get_pos(toBeReplaced, currentline);
+	int length = length(toBeReplaced);
+	return currentline.replace(pos, lenth, replacement);
 }
