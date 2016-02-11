@@ -7,14 +7,14 @@ int get_length(string);
 
 int main(){
 	string filename;
-	cin.ignore();
 	cout << "Please enter a file name" << endl;
 	cin >> filename;
-	ifstream input_file ("File.txt");
+	ifstream input_file;
+	input_file.open(filename.c_str(), ios::in);
 	cin.ignore();
 	// append .out to input file name to create output file name
 	filename.append(".out");
-	ofstream output_file ("File.txt");
+	ofstream output_file (filename.c_str());
 	cout << "The Editing commands are:"<< endl;
 	cout << "L :Determine the length of the current line"<<endl;
 	cout << "P str :Find the position (from 0) of the string str"<<endl;
@@ -27,7 +27,7 @@ int main(){
 	cin.ignore();
 	string command;
 	string currentLine;
-	getline(input_file,currentLine);
+	input_file >> currentLine;
 	cout<<currentLine<<endl;
 	while(command.compare("Q")){
 		if(command.compare("L")){
@@ -37,7 +37,15 @@ int main(){
 			cout<<currentLine<<endl;
 		}
 		if(command.compare("P")){
-		}	
+		}
+		if(command.compare("I")){
+		}
+		if(command.compare("D")){
+		}
+		if(command.compare("R")){
+		}
+		if(command.compare("N")){
+		}
 		cin>> command;
 	}
 	return 0;
@@ -68,8 +76,8 @@ string replace(string currentline, string toBeReplaced){
 	cout << "With what? ";
 	cin >> replacement;
 	int pos = get_pos(toBeReplaced, currentline);
-	int length = length(toBeReplaced);
-	return currentline.replace(pos, lenth, replacement);
+	int length = get_length(toBeReplaced);
+	return currentline.replace(pos, length, replacement);
 }
 
 string nextline (int currentline, string nextline){

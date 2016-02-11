@@ -1,4 +1,4 @@
 Hello
 This is
-A
-Test file
+a
+Test file.
