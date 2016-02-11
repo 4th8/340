@@ -72,6 +72,7 @@ int main(){
 		if(command == "L"){
 			int length;
 			length =  get_length(currentLine);
+			cout<<"Length is: "<<length<<endl;
 			cout<<currentLine<<endl;
 		}
 		else if(command[0] == 'P'){
@@ -84,7 +85,8 @@ int main(){
 			int space = get_pos(" ", command);
 			space++;
 			string str = command.substr(space,get_length(command));
-			cout<<insert(str, currentLine)<<endl;	
+			currentLine=insert(str, currentLine);
+			cout<<currentLine<<endl;	
 		}
 		else if(command == "D"){
 		}
