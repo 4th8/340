@@ -36,12 +36,6 @@ string replace(string currentline, string toBeReplaced){
 	int length = get_length(toBeReplaced);
 	return currentline.replace(pos, length, replacement);
 }
-/*
-string nextline (int currentline, string nextline){
-	
-	string nextline = getline(filename, currerntline++);
-	
-}*/
 
 
 int main(){
@@ -65,7 +59,7 @@ int main(){
 	cout<<endl<<"Enter an editing command following each prompt >"<<endl;
 	cin.clear();
 	string command;
-	input_file >> currentLine;
+	getline(input_file,currentLine);
 	cout<<currentLine<<endl;
 	getline(cin,command);
 	//cout<<command<<endl;
@@ -110,6 +104,9 @@ int main(){
 			cout<<currentLine<<endl;
 		}
 		else if(command == "N"){
+			output_file<<currentLine<<endl;
+			getline(input_file,currentLine);
+			cout<<currentLine<<endl;
 		}
 		cin.clear();
 		getline(cin,command);
