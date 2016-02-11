@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdlib>
 using namespace std;
 string currentLine;
 
@@ -88,7 +89,17 @@ int main(){
 			currentLine=insert(str, currentLine);
 			cout<<currentLine<<endl;	
 		}
-		else if(command == "D"){
+		else if(command[0] == 'D'){
+			int space = get_pos(" ", command);	
+			space++;
+			string posString = command.substr(space,get_length(command));
+			int pos = (posString[0]);
+			space = get_pos(" ", posString);	
+			space++;
+			string numCharacters = posString.substr(space,get_length(posString));
+			int characters = atoi(numCharacters.c_str());
+			currentLine = delete_characters(pos, characters, currentLine);
+			cout<<currentLine<<endl;
 		}
 		else if(command == "R"){
 		}
