@@ -71,3 +71,5 @@ string replace(string currentline, string toBeReplaced){
 	int length = length(toBeReplaced);
 	return currentline.replace(pos, lenth, replacement);
 }
+
+
