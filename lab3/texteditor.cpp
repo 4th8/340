@@ -10,13 +10,16 @@ int get_length(string currentline){
 
 }
 
+string insert(string str, string currentline){
+	int pos;
+	cout << "Insert where? ";
+	cin >> pos;
+	return currentline.insert(pos, str);
+}
+
 int get_pos(string str, string x){
 	return x.find(str);
 
-}
-
-string insert(int pos, string str, string currentline){
-	return currentline.insert(pos, str);
 }
 
 string delete_characters(int pos, int numChar, string currentline){
@@ -64,11 +67,7 @@ int main(){
 	input_file >> currentLine;
 	cout<<currentLine<<endl;
 	getline(cin,command);
-	cout<<command<<endl;
-	cout<<"Begin Test:"<<endl;
-	string test = "How are.";
-	cout<<test.find(" ")<<" Should be 3."<<endl;
-	cout<<"End Test"<<endl;
+	//cout<<command<<endl;
 	while(command != "Q"){
 		if(command == "L"){
 			int length;
@@ -99,36 +98,3 @@ int main(){
 	}
 	return 0;
 }
-
-
-int get_length(string currentline){
-	return currentline.length();
-
-}
-
-int get_pos(string str, string currentline){
-	return currentline.find(str);
-
-}
-
-string insert(string str, string currentline){
-	int pos;
-	cout << "Insert where? ";
-	cin >> pos;
-	return currentline.insert(pos, str);
-}
-
-string delete_characters(int pos, int numChar, string currentline){
-	return currentline.erase(pos, numChar);
-
-}
-
-string replace(string currentline, string toBeReplaced){
-	string replacement;
-	cout << "With what? ";
-	cin >> replacement;
-	int pos = get_pos(toBeReplaced, currentline);
-	int length = get_length(toBeReplaced);
-	return currentline.replace(pos, length, replacement);
-}
-
