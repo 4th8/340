@@ -29,7 +29,7 @@ int main(){
 }
 
 int get_length(string currentline){
-	return strlen(currentline);
+	return currentline.length();
 
 }
 
@@ -40,4 +40,18 @@ int get_pos(string str, string currentline){
 
 string insert(int pos, string str, string currentline){
 	return currentline.insert(pos, str);
+}
+
+string delete_characters(int pos, int numChar, string currentline){
+	return currentline.erase(pos, numChar);
+
+}
+
+string replace(string currentline, string toBeReplaced){
+	string replacement;
+	cout << "With what? ";
+	cin >> replacement;
+	int pos = getPos(toBeReplaced, currentline);
+	int length =strlen(replacement);
+	currentline.replace(pos, lenth, replacement);
 }
