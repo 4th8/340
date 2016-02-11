@@ -17,3 +17,10 @@ int main(){
 	return 0;
 	// testing comment
 }
+
+int get_length(string currentline){
+		return strlen(currentline);
+
+}
+
+
