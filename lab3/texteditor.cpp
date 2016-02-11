@@ -93,9 +93,10 @@ int main(){
 			int space = get_pos(" ", command);	
 			space++;
 			string posString = command.substr(space,get_length(command));
-			int pos = (posString[0]);
 			space = get_pos(" ", posString);	
 			space++;
+			string startString = posString.substr(0,space-1);
+			int pos = atoi(startString.c_str());
 			string numCharacters = posString.substr(space,get_length(posString));
 			int characters = atoi(numCharacters.c_str());
 			currentLine = delete_characters(pos, characters, currentLine);
