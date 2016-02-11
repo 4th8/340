@@ -7,10 +7,10 @@ int get_length(string);
 
 int main(){
 	string filename;
-	cin.ignore();
 	cout << "Please enter a file name" << endl;
 	cin >> filename;
-	ifstream input_file (filename.c_str());
+	ifstream input_file;
+	input_file.open(filename.c_str(), ios::in);
 	cin.ignore();
 	// append .out to input file name to create output file name
 	filename.append(".out");
@@ -27,7 +27,7 @@ int main(){
 	cin.ignore();
 	string command;
 	string currentLine;
-	getline(input_file,currentLine);
+	input_file >> currentLine;
 	cout<<currentLine<<endl;
 	while(command.compare("Q")){
 		if(command.compare("L")){
@@ -37,7 +37,15 @@ int main(){
 			cout<<currentLine<<endl;
 		}
 		if(command.compare("P")){
-		}	
+		}
+		if(command.compare("I")){
+		}
+		if(command.compare("D")){
+		}
+		if(command.compare("R")){
+		}
+		if(command.compare("N")){
+		}
 		cin>> command;
 	}
 	return 0;
