@@ -24,28 +24,33 @@ int main(){
 	cout<<"N :Get the next line of text"<<endl;
 	cout<<"Q :quit editing"<<endl;
 	cout<<endl<<"Enter an editing command following each prompt >"<<endl;
-	cin.ignore();
+	cin.clear();
 	string command;
 	string currentLine;
 	input_file >> currentLine;
 	cout<<currentLine<<endl;
-	while(command.compare("Q")){
-		if(command.compare("L")){
+	cin>> command;
+	while(command != "Q"){
+		if(command ="L"){
 			int length;
 			length =  get_length(currentLine);
 			cout<<"Length is: "<<length<<endl;
 			cout<<currentLine<<endl;
+			break;
 		}
-		if(command.compare("P")){
+		if(command ="P"){
+			cout<<"You entered P"<<endl;
 		}
-		if(command.compare("I")){
+		if(command ="I"){
+		
 		}
-		if(command.compare("D")){
+		if(command ="D"){
 		}
-		if(command.compare("R")){
+		if(command ="R"){
 		}
-		if(command.compare("N")){
+		if(command ="N"){
 		}
+		cin.clear();
 		cin>> command;
 	}
 	return 0;
@@ -79,5 +84,4 @@ string replace(string currentline, string toBeReplaced){
 	int length = get_length(toBeReplaced);
 	return currentline.replace(pos, length, replacement);
 }
-
 
