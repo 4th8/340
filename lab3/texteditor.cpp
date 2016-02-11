@@ -1,19 +1,20 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+using namespace std;
 
+int get_length(string);
 
 int main(){
-	using namespace std;
 	string filename;
 	cin.ignore();
 	cout << "Please enter a file name" << endl;
 	cin >> filename;
-	ifstream input_file (filename);
+	ifstream input_file ("File.txt");
 	cin.ignore();
 	// append .out to input file name to create output file name
 	filename.append(".out");
-	ofstream output_file (filename);
+	ofstream output_file ("File.txt");
 	cout << "The Editing commands are:"<< endl;
 	cout << "L :Determine the length of the current line"<<endl;
 	cout << "P str :Find the position (from 0) of the string str"<<endl;
@@ -23,10 +24,25 @@ int main(){
 	cout<<"N :Get the next line of text"<<endl;
 	cout<<"Q :quit editing"<<endl;
 	cout<<endl<<"Enter an editing command following each prompt >"<<endl;
-
+	cin.ignore();
+	string command;
+	string currentLine;
+	getline(input_file,currentLine);
+	cout<<currentLine<<endl;
+	while(command.compare("Q")){
+		if(command.compare("L")){
+			int length;
+			length =  get_length(currentLine);
+			cout<<"Length is: "<<length<<endl;
+			cout<<currentLine<<endl;
+		}
+		if(command.compare("P")){
+		}	
+		cin>> command;
+	}
 	return 0;
-	// testing comment
 }
+
 
 int get_length(string currentline){
 	return currentline.length();
