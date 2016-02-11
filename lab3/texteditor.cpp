@@ -50,4 +50,6 @@ int main(){
 
 						}
 
-
+string insert(int pos, string str, string currentline){
+	return currentline.insert(pos, str);
+}
