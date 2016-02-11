@@ -73,7 +73,6 @@ int main(){
 			int length;
 			length =  get_length(currentLine);
 			cout<<currentLine<<endl;
-			break;
 		}
 		else if(command[0] == 'P'){
 			int space = get_pos(" ", command);	
