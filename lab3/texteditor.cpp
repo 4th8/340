@@ -38,4 +38,6 @@ int get_pos(string str, string currentline){
 
 }
 
-
+string insert(int pos, string str, string currentline){
+	return currentline.insert(pos, str);
+}
