@@ -33,26 +33,21 @@ int main(){
 					cout<<"Length is: "<<length<<endl;
 					cout<<currentLine<<endl;
 					}
-			if(command.compare("P"){
-				
-			cin>> command;
-	}
-					return 0;
-					// testing comment
-					}
+					if(command.compare("P"){
+						}	
+						cin>> command;
+						}
+						return 0;
+						}
 
-	return 0;
-	// testing comment
-}
+						int get_length(string currentline){
+						return strlen(currentline);
 
-int get_length(string currentline){
-	return strlen(currentline);
+						}
 
-}
+						int get_pos(string str, string currentline){
+						return currentline.find(str);
 
-int get_pos(string str, string currentline){
-	return currentline.find(str);
-
-					}
+						}
 
 
