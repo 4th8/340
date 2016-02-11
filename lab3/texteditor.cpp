@@ -83,3 +83,29 @@ string replace(string currentline, string toBeReplaced){
 	int length = get_length(toBeReplaced);
 	return currentline.replace(pos, length, replacement);
 }
+
+string nextline (int currentline, string nextline){
+	
+	string nextline = getline(filename, currerntline++);
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
