@@ -23,14 +23,27 @@ int main(){
 	cout<<"N :Get the next line of text"<<endl;
 	cout<<"Q :quit editing"<<endl;
 	cout<<endl<<"Enter an editing command following each prompt >"<<endl;
+	cin.ignore();
+	string command;
+	cin >> command;
+	while(command.compare("Q"){
+			if(command.compare("L"){
+					int length;
+					length =  get_length(currentline);
+					cout<<"Length is: "<<length<<endl;
+					cout<<currentLine<<endl;
+					}
+			if(command.compare("P"){
+				
+			cin>> command;
+	}
+					return 0;
+					// testing comment
+					}
 
-	return 0;
-	// testing comment
-}
+					int get_length(string currentline){
+					return strlen(currentline);
 
-int get_length(string currentline){
-		return strlen(currentline);
-
-}
+					}
 
 
