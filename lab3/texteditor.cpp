@@ -43,6 +43,12 @@ int main(){
 	cout << "Please enter a file name" << endl;
 	cin >> filename;
 	ifstream input_file;
+	while(!input_file.good()){
+		cout << "That file does not exist" << endl;
+		cout << "Please enter a file name" << endl;
+		cin >> filename;	 
+		ifstream input_file;
+	}
 	input_file.open(filename.c_str(), ios::in);
 	cin.ignore();
 	// append .out to input file name to create output file name
@@ -106,8 +112,11 @@ int main(){
 		else if(command == "N"){
 			output_file<<currentLine<<endl;
 			getline(input_file,currentLine);
-			cout<<currentLine<<endl;
-		}
+			cout<<"Next Line: " << currentLine<<endl;
+			if(input_file.eof()){
+				cout << "*** Editing Complete ***" << endl;
+			}
+		}		
 		cin.clear();
 		getline(cin,command);
 	}
