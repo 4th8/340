@@ -33,7 +33,6 @@ int get_pos(string str, string x){
 
 string delete_characters(int pos, int numChar, string currentline){
 	return currentline.erase(pos, numChar);
-
 }
 
 string replace(string currentline, string toBeReplaced){
@@ -147,6 +146,7 @@ int main(){
 				cout<<"Next Line: " << currentLine<<endl;
 				if(input_file.eof()){
 					cout << "*** Editing Complete ***" << endl;
+					return 0;
 				}
 			}		
 			cin.clear();
