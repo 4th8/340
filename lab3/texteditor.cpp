@@ -126,14 +126,14 @@ int main(){
 			else if(command[0] == 'R'){
 				int space = get_pos(" ", command);	
 				space++;
-				string posString = command.substr(space,get_length(command));
-				if(currentLine.find(posString) != std::string::npos){
-					currentLine = replace(currentLine, posString);
-					cout<<currentLine<<endl;
-				}
-				else{
-					cout << "Invalid substring. Please restart the program." <<endl;
-					return 0;
+				if(space != -1){
+					string posString = command.substr(space,get_length(command));
+					if(currentLine.find(posString) != std::string::npos){
+						currentLine = replace(currentLine, posString);
+						cout<<currentLine<<endl;
+					} else{
+					cout << "Invalid substring. Please try again.\n" <<currentLine<<endl;
+					}
 				}
 			}
 			else if(command == "N"){
