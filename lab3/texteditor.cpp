@@ -15,6 +15,9 @@ string insert(string str, string currentline){
 	int pos;
 	cout << "Insert where? ";
 	cin >> pos;
+	if( pos > get_length(currentline)){
+		pos = get_length(currentline);
+	}
 	return currentline.insert(pos, str);
 }
 
