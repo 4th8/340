@@ -32,6 +32,9 @@ int get_pos(string str, string x){
 }
 
 string delete_characters(int pos, int numChar, string currentline){
+	if ((pos+numChar > get_length(currentline)){
+			numChar = get_length(currentline)-pos;
+			}
 	return currentline.erase(pos, numChar);
 }
 
