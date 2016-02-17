@@ -32,7 +32,7 @@ int get_pos(string str, string x){
 }
 
 string delete_characters(int pos, int numChar, string currentline){
-	if ((pos+numChar > get_length(currentline)){
+	if ((pos+numChar) > get_length(currentline)){
 			numChar = get_length(currentline)-pos;
 			}
 	return currentline.erase(pos, numChar);
@@ -123,6 +123,7 @@ int main(){
 						cout<<currentLine<<endl;
 					} else{
 					cout<<"You did not enter a valid position. Please try again.\n"<<currentLine<<endl;
+					}
 				}
 			}
 			else if(command[0] == 'R'){
