@@ -115,11 +115,11 @@ int main(){
 					string numCharacters = posString.substr(space,get_length(posString));
 					int characters = atoi(numCharacters.c_str());
 					int total = get_length(currentLine) - pos; 
-					if(characters < total){
+					if(characters <= total){
 						currentLine = delete_characters(pos, characters, currentLine);
 						cout<<currentLine<<endl;
 					} else {
-						cout<<"This line does not contain that many characters. Please restart program to try again." <<endl;
+						cout<<"This line does not contain that many characters. Please restart program to try again.\n"<<currentLine<<endl;
 					}
 				}
 				else{
