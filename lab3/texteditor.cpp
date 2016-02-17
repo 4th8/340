@@ -86,10 +86,9 @@ int main(){
 				space++;
 				string str = command.substr(space,get_length(command));
 				if(get_pos(str, currentLine) != -1){
-				cout<<"Position is: "<<get_pos(str, currentLine)<<endl;
-			}
-				else{
-					cout<<"That is not in the current line."<<endl;
+					cout<<"Position is: "<<get_pos(str, currentLine)<<endl;
+				} else{
+					cout<<"Invalid string. Please try again.\n"<<currentLine<<endl;
 				}
 			}
 			else if(command[0] == 'I'){
@@ -116,12 +115,12 @@ int main(){
 					string numCharacters = posString.substr(space,get_length(posString));
 					int characters = atoi(numCharacters.c_str());
 					int total = get_length(currentLine) - pos; 
-					if(characters > total){
+					if(characters < total){
+						currentLine = delete_characters(pos, characters, currentLine);
+						cout<<currentLine<<endl;
+					} else {
 						cout<<"This line does not contain that many characters. Please restart program to try again." <<endl;
-						return 0;
 					}
-					currentLine = delete_characters(pos, characters, currentLine);
-					cout<<currentLine<<endl;
 				}
 				else{
 					cout<<"You did not enter a valid position. Please try again.\n"<<currentLine<<endl;
