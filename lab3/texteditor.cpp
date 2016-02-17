@@ -83,22 +83,24 @@ int main(){
 				int space = get_pos(" ", command);
 				space++;
 				string str = command.substr(space,get_length(command));
-				if(get_pos(str, currentLine) == -1){
-					cout << "Invalid substring. Please restart the program to try again." <<endl;
-					return 0;
-				}
+				if(get_pos(str, currentLine) != -1){
 				cout<<"Position is: "<<get_pos(str, currentLine)<<endl;
+			}
+				else{
+					cout<<"That is not in the current line."<<endl;
+				}
 			}
 			else if(command[0] == 'I'){
 				int space = get_pos(" ", command);
-				if(space == -1){
-					cout<<"Invalid string. Please restart the program to try again."<<endl;
-					return 0;
-				}
+				if(space != -1){
 				space++;
 				string str = command.substr(space,get_length(command));
 				currentLine = insert(str, currentLine);
 				cout<<currentLine<<endl;	
+			}
+				else{
+					cout<<"Insert what? Please try again.\n"<<currentLine<<endl;
+				}
 			}
 			else if(command[0] == 'D'){
 				int space = get_pos(" ", command);	
