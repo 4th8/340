@@ -88,11 +88,8 @@ int main(){
 				string str = command.substr(space,get_length(command));
 				if(get_pos(str, currentLine) != -1){
 					cout<<"Position is: "<<get_pos(str, currentLine)<<endl;
-				}
-				else if((currentLine.find(str) == std::string::npos)){
-					cout<<"That is not in the current line. Please try again.\n"<<currentLine<<endl;
 				} else{
-					cout<<"No string entered. Please try again.\n"<<currentLine<<endl;
+					cout<<"Invalid string. Please try again.\n"<<currentLine<<endl;
 				}
 			}
 			else if(command[0] == 'I'){
