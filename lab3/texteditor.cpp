@@ -118,12 +118,8 @@ int main(){
 					string numCharacters = posString.substr(space,get_length(posString));
 					int characters = atoi(numCharacters.c_str());
 					int total = get_length(currentLine) - pos; 
-					if(characters <= total){
 						currentLine = delete_characters(pos, characters, currentLine);
 						cout<<currentLine<<endl;
-					} else{
-					cout<<"You did not enter a valid position. Please try again.\n"<<currentLine<<endl;
-					}
 				}
 			}
 			else if(command[0] == 'R'){
