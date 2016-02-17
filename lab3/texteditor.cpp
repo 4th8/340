@@ -104,19 +104,24 @@ int main(){
 				int space = get_pos(" ", command);	
 				space++;
 				string posString = command.substr(space,get_length(command));
-				space = get_pos(" ", posString);	
-				space++;
-				string startString = posString.substr(0,space-1);
-				int pos = atoi(startString.c_str());
-				string numCharacters = posString.substr(space,get_length(posString));
-				int characters = atoi(numCharacters.c_str());
-				int total = get_length(currentLine) - pos; 
-				if(characters > total){
-					cout<<"This line does not contain that many characters. Please restart program to try again." <<endl;
-					return 0;
+				space = get_pos(" ", posString);
+				if(space != -1){
+					space++;
+					string startString = posString.substr(0,space-1);
+					int pos = atoi(startString.c_str());
+					string numCharacters = posString.substr(space,get_length(posString));
+					int characters = atoi(numCharacters.c_str());
+					int total = get_length(currentLine) - pos; 
+					if(characters > total){
+						cout<<"This line does not contain that many characters. Please restart program to try again." <<endl;
+						return 0;
+					}
+					currentLine = delete_characters(pos, characters, currentLine);
+					cout<<currentLine<<endl;
 				}
-				currentLine = delete_characters(pos, characters, currentLine);
-				cout<<currentLine<<endl;
+				else{
+					cout<<"You did not enter a valid position. Please try again.\n"<<currentLine<<endl;
+				}
 			}
 			else if(command[0] == 'R'){
 				int space = get_pos(" ", command);	
