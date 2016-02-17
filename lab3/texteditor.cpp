@@ -118,11 +118,7 @@ int main(){
 					if(characters <= total){
 						currentLine = delete_characters(pos, characters, currentLine);
 						cout<<currentLine<<endl;
-					} else {
-						cout<<"This line does not contain that many characters. Please restart program to try again.\n"<<currentLine<<endl;
-					}
-				}
-				else{
+					} else{
 					cout<<"You did not enter a valid position. Please try again.\n"<<currentLine<<endl;
 				}
 			}
