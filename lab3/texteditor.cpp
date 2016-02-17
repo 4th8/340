@@ -91,12 +91,17 @@ int main(){
 						}
 						else if(command[0] == 'I'){
 								int space = get_pos(" ", command);
-								if(space != -1){
 										space++;
 										string str = command.substr(space,get_length(command));
+										int i = 0;
+										i = get_length(str);
+										cout<<"String: "<<str<<endl;
+										if (i == 0){
+											cout<<"Invalid string. Please restart the program to try again."<<endl;
+											return 0;
+										}
 										currentLine=insert(str, currentLine);
 										cout<<currentLine<<endl;	
-								}
 						}
 						else if(command[0] == 'D'){
 								int space = get_pos(" ", command);	
